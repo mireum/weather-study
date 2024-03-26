@@ -27,6 +27,29 @@ function Home() {
     getLocation();
   }, []);
 
+  useEffect(() => {
+    if (latitude && longitude) {
+      const fetchData = async () => {
+        try {
+          const apiKey = 'ero0PCiw0xS0m5XbHGdRNe4XLQfmyRSHVU2pPJQ7xx%2B%2BC2lnsL7zametsqSaIqJNoTXnkKCdi2l5oIxMKgLR%2FQ%3D%3D';
+          const baseDate = '20240326';
+          const baseTime = '0500';
+          const nx = '55';
+          const ny = '127';
+          const apiUrl = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=${apiKey}&numOfRows=12&pageNo=1&dataType=JSON&base_date=${baseDate}&base_time=${baseTime}&nx=${nx}&ny=${ny}`;
+
+          const response = await fetch(apiUrl);
+          const data = await response.json();
+          setWeatherData(data);
+        } catch (error) {
+          console.error('Error fetching weather data:', error);
+        }
+      };
+
+      fetchData();
+    }
+  }, []);
+
   return (
     <div>
       <h1>사용자 위치 정보</h1>
@@ -36,6 +59,14 @@ function Home() {
         </p>
       ) : (
         <p>위치 정보를 가져오는 중...</p>
+      )}
+      {weatherData ? (
+        <div>
+          <h2>날씨 데이터</h2>
+          <pre>{JSON.stringify(weatherData, null, 2)}</pre>
+        </div>
+      ) : (
+        <p>날씨 정보를 가져오는 중...</p>
       )}
     </div>
   );
