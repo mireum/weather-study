@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
+import dfs_xy_conv from './Function';
 
 function Home() {
   const [latitude, setLatitude] = useState(null);
@@ -53,6 +54,8 @@ function Home() {
     }
   }, [latitude, longitude]);
 
+  const rs = dfs_xy_conv("toXY", "37.40422435", "126.7163943");
+  console.log("격자::", rs);
   return (
     <div>
       <h1>사용자 위치 정보</h1>
