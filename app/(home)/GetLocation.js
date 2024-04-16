@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext } from 'react';
 import dfs_xy_conv from './Function';
 
 export default function GetLocation() {
@@ -10,7 +10,8 @@ export default function GetLocation() {
 
   useEffect(() => {
     const GetLocation = () => {
-      if (navigator.geolocation) {
+      // if (navigator.geolocation) {
+        if (typeof window !== 'undefined') {
         navigator.geolocation.getCurrentPosition(
           (position) => {
             const nxny = dfs_xy_conv("toXY", position.coords.latitude, position.coords.longitude);
@@ -31,5 +32,32 @@ export default function GetLocation() {
     GetLocation();
   }, []);
 
-  return  [latitude, longitude] ;
+  return  (
+    [latitude, longitude]
+  ) ;
 }
+// export default function GetLocContext() {
+//   useEffect(() => {
+//     const GetLocation = () => {
+//       if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(
+//           (position) => {
+//             const nxny = dfs_xy_conv("toXY", position.coords.latitude, position.coords.longitude);
+//             const LocContext = createContext(nxny);
+//           },
+//           (error) => {
+//             console.error('Error getting geolocation:', error);
+//           }
+//         );
+//       } else {
+//         console.error('Geolocation is not supported by this browser.');
+//       }
+//     };
+
+//     GetLocation();
+//   }, []);
+
+//   return  (
+//     [latitude, longitude]
+//   ) ;
+// }

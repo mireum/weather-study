@@ -17,12 +17,9 @@ const getWeather = async (latitude, longitude) => {
 }
 
 export default async function WeatherData(props) {
-  // console.log(props.props);
-  // const ff = props.props;
-  // console.log(ff());
-  // console.log(props.props.props);
-  // const data = await getWeather(latitude, longitude);
-  // console.log('data::', data);
+  // console.log(props);
+  // console.log(props.props.type);
+
   return (
     <>
       {/* <div>{data}</div> */}
