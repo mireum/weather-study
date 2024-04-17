@@ -1,15 +1,5 @@
 "use client"
 
-import GetLocation from "./GetLocation"
+import GetWeatherData from "./WeatherData";
 
-export function Middle() {
-  // const coordinate = GetLocation();
-  // console.log(coordinate);
-  return (
-
-    <>
-      <div id="loc">{<GetLocation />}ss</div>
-      {asd.innerText}
-    </>
-  )
-}
+export default GetWeatherData;
