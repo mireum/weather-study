@@ -1,3 +1,4 @@
+"use client"
 
 import dfs_xy_conv from './Function';
 import GetLocation from './GetLocation';
