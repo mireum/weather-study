@@ -18,6 +18,7 @@ export async function getData(latitude, longitude) {
   }
 }
 
+
 export async function getWeather(latitude, longitude) {
   try {
     console.log(process.env.WEATHER_API_KEY);
