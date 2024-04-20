@@ -32,7 +32,6 @@ export async function getWeather(latitude, longitude) {
 
     const response = await fetch(apiUrl);
     const data = await response.json();
-    console.log(apiKey);
     console.log(apiUrl);
     res.json(data);
     
