@@ -12,6 +12,7 @@ export async function getData(latitude, longitude) {
     const response = await fetch(apiUrl);
     const json = await response.json();
 
+    // return json;
     return json;
   } catch (error) {
     console.error(error);
