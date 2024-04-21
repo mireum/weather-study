@@ -11,7 +11,6 @@ export async function getData(latitude, longitude) {
     const apiUrl = `https://api.vworld.kr/req/address?service=address&request=getAddress&version=2.0&key=${apiKey}&crs=${crs}&point=${point}&format=${format}&type=${type}&zipcode=${zipcode}&errorFormat=json&callback`;
     const response = await fetch(apiUrl);
     const json = await response.json();
-    console.log(json);
 
     return json;
   } catch (error) {
