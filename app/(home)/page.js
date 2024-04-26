@@ -64,7 +64,7 @@ function Home() {
         try {
           // https://dayday.devcjw.com
           const data = await fetch('/api/getWeather', {
-            method: "POST",
+            // method: "POST",
             headers: {
               "Content-Type": "application/json",
             },
