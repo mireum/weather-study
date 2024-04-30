@@ -108,14 +108,6 @@ function Home() {
               <p>날씨 정보를 가져오는 중...</p>
             )}
           </div>
-          <div>
-            {weatherData ? (
-              // <WeatherData data={weatherData.response.body.items.item} position={position}/>
-              <div>WeatherData 있음</div>
-            ) : (
-              <p>날씨 정보를 가져오는 중...</p>
-            )}
-          </div>
         </div>
       </div>
       {/* {longitude && latitude && 
