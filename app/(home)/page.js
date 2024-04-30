@@ -110,6 +110,7 @@ function Home() {
           </div>
         </div>
       </div>
+      
       {/* {longitude && latitude && 
       <Main>
         <WeatherData latitude={latitude} longitude={longitude}/>
