@@ -114,10 +114,6 @@ function Home() {
       {/* {longitude && latitude && 
       <Main>
         <WeatherData latitude={latitude} longitude={longitude}/>
-      </Main>}
-      {longitude && latitude && 
-      <Main>
-        <WeatherData latitude={latitude} longitude={longitude}/>
       </Main>} */}
     </>
 
