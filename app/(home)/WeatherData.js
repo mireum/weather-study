@@ -46,7 +46,8 @@ export default function WeatherData({latitude, longitude}) {
   // return res.json;
 
   fetch(apiUrl, {
-    method: "POST",
+    // method: "POST",
+    method: "GET",
     mode: 'cors',
     headers: {
     'Access-Control-Allow-Origin': '*',
