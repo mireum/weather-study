@@ -4,6 +4,7 @@ const nextConfig = {
     return [
       {
         source: "/:path*",
+        // destination: "",
         destination: "https://api.vworld.kr",
       },
     ];
