@@ -11,29 +11,6 @@ export default function Main({ children }) {
   // const [longitude, setLongitude] = useState(null);
   // const [position, setPosition] = useState([]);
 
-  // useEffect(() => {
-  //   const GetLocation = () => {
-  //     // if (navigator.geolocation) {
-  //       if (typeof window !== 'undefined') {
-  //       navigator.geolocation.getCurrentPosition(
-  //         (position) => {
-  //           const nxny = dfs_xy_conv("toXY", position.coords.latitude, position.coords.longitude);
-  //           console.log(nxny);
-  //           setLatitude(nxny.x);
-  //           setLongitude(nxny.y);
-  //           setPosition([nxny.lat, nxny.lng]);
-  //         },
-  //         (error) => {
-  //           console.error('Error getting geolocation:', error);
-  //         }
-  //       );
-  //     } else {
-  //       console.error('Geolocation is not supported by this browser.');
-  //     }
-  //   };
-
-  //   GetLocation();
-  // }, []);
 
   useEffect(() => {
     fetch('/api/getData')
