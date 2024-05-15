@@ -82,6 +82,30 @@ function Home() {
       getWeather();
     }
   }, [latitude, longitude]);
+  useEffect(() => {
+    if (latitude && longitude) {
+      const getWeather = async () => {
+        try {
+          // https://dayday.devcjw.com
+          const data = await fetch('/api/getWeather', {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              lng: `${longitude}`,
+              lat: `${latitude}`,
+            })
+          });
+          const json = await data.json();
+          setWeatherData(json);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      getWeather();
+    }
+  }, [latitude, longitude]);
 
 
   return (
